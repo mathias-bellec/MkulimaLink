@@ -1,0 +1,229 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useQuery } from 'react-query';
+import { Search, Filter, MapPin, Heart } from 'lucide-react';
+import api from '../api/axios';
+
+function Products() {
+  const [filters, setFilters] = useState({
+    search: '',
+    category: '',
+    region: '',
+    minPrice: '',
+    maxPrice: '',
+    quality: '',
+    organic: ''
+  });
+  const [page, setPage] = useState(1);
+
+  const { data, isLoading } = useQuery(
+    ['products', filters, page],
+    async () => {
+      const params = new URLSearchParams();
+      Object.entries(filters).forEach(([key, value]) => {
+        if (value) params.append(key, value);
+      });
+      params.append('page', page);
+      params.append('limit', '12');
+      
+      const response = await api.get(`/products?${params}`);
+      return response.data;
+    }
+  );
+
+  const categories = [
+    'grains', 'vegetables', 'fruits', 'livestock', 
+    'dairy', 'poultry', 'seeds', 'fertilizers', 'equipment'
+  ];
+
+  const regions = [
+    'Dar es Salaam', 'Arusha', 'Dodoma', 'Mwanza', 'Mbeya',
+    'Morogoro', 'Tanga', 'Moshi', 'Iringa', 'Kilimanjaro'
+  ];
+
+  return (
+    <div>
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Browse Products</h1>
+        
+        <div className="card mb-4">
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex-1 relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={filters.search}
+                onChange={(e) => setFilters({ ...filters, search: e.target.value })}
+                className="input-field pl-10"
+              />
+            </div>
+            <button className="btn-outline flex items-center gap-2">
+              <Filter size={20} />
+              <span>Filters</span>
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+            <select
+              value={filters.category}
+              onChange={(e) => setFilters({ ...filters, category: e.target.value })}
+              className="input-field"
+            >
+              <option value="">All Categories</option>
+              {categories.map(cat => (
+                <option key={cat} value={cat}>{cat.charAt(0).toUpperCase() + cat.slice(1)}</option>
+              ))}
+            </select>
+
+            <select
+              value={filters.region}
+              onChange={(e) => setFilters({ ...filters, region: e.target.value })}
+              className="input-field"
+            >
+              <option value="">All Regions</option>
+              {regions.map(region => (
+                <option key={region} value={region}>{region}</option>
+              ))}
+            </select>
+
+            <select
+              value={filters.quality}
+              onChange={(e) => setFilters({ ...filters, quality: e.target.value })}
+              className="input-field"
+            >
+              <option value="">All Quality</option>
+              <option value="premium">Premium</option>
+              <option value="standard">Standard</option>
+              <option value="economy">Economy</option>
+            </select>
+
+            <select
+              value={filters.organic}
+              onChange={(e) => setFilters({ ...filters, organic: e.target.value })}
+              className="input-field"
+            >
+              <option value="">All Types</option>
+              <option value="true">Organic Only</option>
+              <option value="false">Non-Organic</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {isLoading ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="card">
+              <div className="skeleton h-48 rounded-lg mb-4"></div>
+              <div className="skeleton h-6 w-3/4 mb-2"></div>
+              <div className="skeleton h-4 w-1/2"></div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data?.products?.map((product) => (
+              <Link
+                key={product._id}
+                to={`/products/${product._id}`}
+                className="card hover:shadow-xl transition-shadow group"
+              >
+                <div className="relative mb-4">
+                  {product.images && product.images.length > 0 ? (
+                    <img
+                      src={product.images[0].url}
+                      alt={product.name}
+                      className="w-full h-48 object-cover rounded-lg"
+                    />
+                  ) : (
+                    <div className="w-full h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                      <span className="text-gray-400">No image</span>
+                    </div>
+                  )}
+                  <button className="absolute top-2 right-2 p-2 bg-white rounded-full shadow-md hover:bg-gray-100">
+                    <Heart size={20} className="text-gray-600" />
+                  </button>
+                  {product.organic && (
+                    <span className="absolute top-2 left-2 badge-success">Organic</span>
+                  )}
+                </div>
+
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-primary-600">
+                  {product.name}
+                </h3>
+                
+                <p className="text-gray-600 text-sm mb-3 line-clamp-2">{product.description}</p>
+
+                <div className="flex items-center justify-between mb-3">
+                  <div>
+                    <p className="text-2xl font-bold text-primary-600">
+                      TZS {product.price.toLocaleString()}
+                    </p>
+                    <p className="text-sm text-gray-500">per {product.unit}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-sm text-gray-600">{product.quantity} {product.unit}</p>
+                    <span className={`badge ${
+                      product.quality === 'premium' ? 'badge-warning' :
+                      product.quality === 'standard' ? 'badge-info' : 'badge-success'
+                    }`}>
+                      {product.quality}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-center text-sm text-gray-600">
+                  <MapPin size={16} className="mr-1" />
+                  <span>{product.location?.region || 'Tanzania'}</span>
+                </div>
+
+                {product.seller && (
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <p className="text-sm text-gray-600">
+                      Seller: <span className="font-medium">{product.seller.name}</span>
+                      {product.seller.rating > 0 && (
+                        <span className="ml-2 text-yellow-500">★ {product.seller.rating.toFixed(1)}</span>
+                      )}
+                    </p>
+                  </div>
+                )}
+              </Link>
+            ))}
+          </div>
+
+          {data?.products?.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-gray-500 text-lg">No products found</p>
+            </div>
+          )}
+
+          {data && data.totalPages > 1 && (
+            <div className="flex justify-center gap-2 mt-8">
+              <button
+                onClick={() => setPage(p => Math.max(1, p - 1))}
+                disabled={page === 1}
+                className="btn-secondary disabled:opacity-50"
+              >
+                Previous
+              </button>
+              <span className="px-4 py-2 text-gray-700">
+                Page {page} of {data.totalPages}
+              </span>
+              <button
+                onClick={() => setPage(p => Math.min(data.totalPages, p + 1))}
+                disabled={page === data.totalPages}
+                className="btn-secondary disabled:opacity-50"
+              >
+                Next
+              </button>
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+export default Products;
