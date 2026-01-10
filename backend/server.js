@@ -58,7 +58,12 @@ const equipmentRoutes = require('./routes/equipment');
 const analyticsRoutes = require('./routes/analytics');
 const supplierRoutes = require('./routes/suppliers');
 const healthRoutes = require('./routes/health');
+const docsRoutes = require('./routes/docs');
 const v1Routes = require('./routes/v1');
+
+// API Documentation
+app.use('/api/docs', docsRoutes);
+app.use('/api/v1/docs', docsRoutes);
 
 // API v1 routes (versioned)
 app.use('/api/v1', v1Routes);

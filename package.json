@@ -21,6 +21,10 @@
     "format": "prettier --write \"backend/**/*.js\"",
     "format:check": "prettier --check \"backend/**/*.js\"",
     "seed": "node backend/utils/seedData.js",
+    "migrate": "node backend/utils/migrate.js migrate",
+    "migrate:rollback": "node backend/utils/migrate.js rollback",
+    "migrate:status": "node backend/utils/migrate.js status",
+    "migrate:create": "node backend/utils/migrate.js create",
     "docker:dev": "docker-compose -f docker-compose.dev.yml up -d",
     "docker:down": "docker-compose down",
     "prepare": "husky"
@@ -63,7 +67,12 @@
     "sanitize-html": "^2.13.0",
     "express-mongo-sanitize": "^2.2.0",
     "xss-clean": "^0.1.4",
-    "hpp": "^0.2.3"
+    "hpp": "^0.2.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "js-yaml": "^4.1.0",
+    "@sentry/node": "^8.26.0",
+    "@sentry/profiling-node": "^8.26.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4",
