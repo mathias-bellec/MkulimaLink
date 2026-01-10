@@ -97,6 +97,7 @@
 | BullMQ | 5+ | Job queues |
 | JWT | - | Authentication |
 | Winston | 3.11 | Logging |
+| Sentry | 8.x | Error tracking |
 
 ### Frontend
 | Technology | Version | Purpose |
@@ -109,6 +110,8 @@
 | Framer Motion | 11.x | Animations |
 | React Leaflet | 4.x | Maps |
 | Recharts | 2.x | Charts |
+| i18next | 23.x | Internationalization |
+| Storybook | 8.x | Component docs |
 
 ### Integrations
 - **M-Pesa** - Mobile payments (Daraja API)
@@ -197,12 +200,21 @@ MkulimaLink/
 │       │   └── offlineStorage.js # IndexedDB
 │       ├── App.js
 │       └── index.js
+├── .github/workflows/           # CI/CD pipelines
+├── .husky/                      # Git hooks
+├── .storybook/                  # Storybook config
 ├── .env.example                 # Environment template
-├── .gitignore
+├── .eslintrc.json               # ESLint config
+├── .prettierrc                  # Prettier config
+├── Dockerfile                   # Docker build
+├── docker-compose.yml           # Docker services
+├── jest.config.js               # Test config
 ├── package.json                 # Root package
 ├── API_DOCUMENTATION.md         # Full API docs
 ├── CHANGELOG.md                 # Version history
+├── CONTRIBUTING.md              # Contributor guide
 ├── DEPLOYMENT.md                # Deploy guide
+├── LICENSE                      # MIT License
 └── README.md                    # This file
 ```
 
@@ -364,9 +376,13 @@ pm2 save
 pm2 startup
 ```
 
-### Docker (Coming Soon)
+### Docker
 
 ```bash
+# Development (MongoDB + Redis only)
+npm run docker:dev
+
+# Production (full stack)
 docker-compose up -d
 ```
 
@@ -387,12 +403,53 @@ docker-compose up -d
 ## 🧪 Testing
 
 ```bash
-# Run backend tests
+# Run backend tests with coverage
 npm test
+
+# Watch mode
+npm run test:watch
 
 # Run frontend tests
 cd frontend && npm test
 ```
+
+## 🔧 Developer Tools
+
+### API Documentation
+```bash
+# Access Swagger UI at
+http://localhost:5000/api/docs
+```
+
+### Storybook (Component Library)
+```bash
+cd frontend
+npm run storybook
+# Opens at http://localhost:6006
+```
+
+### Database Migrations
+```bash
+npm run migrate           # Run migrations
+npm run migrate:rollback  # Rollback last
+npm run migrate:status    # Check status
+npm run migrate:create "name"  # Create new
+```
+
+### Linting & Formatting
+```bash
+npm run lint        # Check for issues
+npm run lint:fix    # Auto-fix issues
+npm run format      # Format code
+```
+
+## 🌍 Internationalization
+
+Supported languages:
+- 🇬🇧 **English** (default)
+- 🇹🇿 **Swahili** (Kiswahili)
+
+Language files: `frontend/src/i18n/locales/`
 
 ## 🤝 Contributing
 
@@ -401,6 +458,16 @@ cd frontend && npm test
 3. Commit changes (`git commit -m 'Add AmazingFeature'`)
 4. Push to branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+## 🔒 Security
+
+- JWT authentication with refresh tokens
+- Rate limiting (IP & per-user)
+- Input sanitization (XSS, NoSQL injection)
+- Helmet.js security headers
+- CORS configuration
+- Sentry error tracking
+- Pre-commit hooks (Husky)
 
 ## 📄 License
 
