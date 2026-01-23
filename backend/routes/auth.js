@@ -84,4 +84,82 @@ router.get('/me', protect, async (req, res) => {
   }
 });
 
+router.put('/profile', protect, async (req, res) => {
+  try {
+    const { name, phone, location, farmDetails, businessDetails, notificationPreferences } = req.body;
+    
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      {
+        name,
+        phone,
+        location,
+        farmDetails: req.user.role === 'farmer' ? farmDetails : undefined,
+        businessDetails: req.user.role === 'buyer' ? businessDetails : undefined,
+        notificationPreferences
+      },
+      { new: true, runValidators: true }
+    ).select('-password');
+    
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.post('/logout', protect, async (req, res) => {
+  try {
+    res.json({ message: 'Logged out successfully' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.post('/refresh-token', async (req, res) => {
+  try {
+    const { token } = req.body;
+    if (!token) {
+      return res.status(401).json({ message: 'No token provided' });
+    }
+    
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id);
+    
+    if (!user) {
+      return res.status(401).json({ message: 'User not found' });
+    }
+    
+    const newToken = generateToken(user._id);
+    res.json({ token: newToken });
+  } catch (error) {
+    res.status(401).json({ message: 'Invalid token' });
+  }
+});
+
+router.post('/verify-email', protect, async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.user._id,
+      { verified: true },
+      { new: true }
+    ).select('-password');
+    
+    res.json({ message: 'Email verified successfully', user });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
+router.get('/users/:id', async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id).select('-password');
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 module.exports = router;
