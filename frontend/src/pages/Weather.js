@@ -9,8 +9,14 @@ function Weather() {
   const { data: weatherData, isLoading } = useQuery(
     ['weather', selectedRegion],
     async () => {
-      const response = await api.get(`/weather/current/${selectedRegion}`);
-      return response.data;
+      try {
+        const response = await api.get(`/api/weather`);
+        const weather = response.data.weather?.find(w => w.location === selectedRegion) || response.data.weather?.[0];
+        return weather || {};
+      } catch (error) {
+        console.error('Error fetching weather:', error);
+        return {};
+      }
     },
     { enabled: !!selectedRegion }
   );
@@ -18,15 +24,26 @@ function Weather() {
   const { data: alerts } = useQuery(
     ['weather-alerts', selectedRegion],
     async () => {
-      const response = await api.get(`/weather/alerts/${selectedRegion}`);
-      return response.data;
+      try {
+        await api.get(`/api/weather`);
+        return { alerts: [] };
+      } catch (error) {
+        console.error('Error fetching weather alerts:', error);
+        return { alerts: [] };
+      }
     },
     { enabled: !!selectedRegion }
   );
 
   const { data: regions } = useQuery('weather-regions', async () => {
-    const response = await api.get('/weather/regions');
-    return response.data;
+    try {
+      const response = await api.get('/api/weather');
+      const weatherRegions = response.data.weather?.map(w => w.location) || [];
+      return { regions: weatherRegions };
+    } catch (error) {
+      console.error('Error fetching weather regions:', error);
+      return { regions: ['Dar es Salaam', 'Morogoro', 'Arusha', 'Iringa', 'Mbeya', 'Mwanza'] };
+    }
   });
 
   const getWeatherIcon = (condition) => {

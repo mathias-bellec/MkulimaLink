@@ -28,9 +28,10 @@ function Products() {
         params.append('page', page);
         params.append('limit', '12');
         
-        const response = await api.get(`/products?${params}`);
+        const response = await api.get(`/api/products?${params}`);
         return response.data;
       } catch (error) {
+        console.error('Error fetching products:', error);
         // Use demo data if API fails
         return { products: demoProducts, totalPages: 1 };
       }

@@ -11,23 +11,40 @@ function Market() {
   const { data: latestPrices, isLoading } = useQuery(
     ['market-prices', selectedCategory, selectedRegion],
     async () => {
-      const params = new URLSearchParams();
-      if (selectedCategory) params.append('category', selectedCategory);
-      if (selectedRegion) params.append('region', selectedRegion);
-      
-      const response = await api.get(`/market/prices/latest?${params}`);
-      return response.data;
+      try {
+        const params = new URLSearchParams();
+        if (selectedCategory) params.append('category', selectedCategory);
+        if (selectedRegion) params.append('region', selectedRegion);
+        
+        const response = await api.get(`/api/market?${params}`);
+        return response.data;
+      } catch (error) {
+        console.error('Error fetching market prices:', error);
+        return { prices: [] };
+      }
     }
   );
 
   const { data: regions } = useQuery('regions', async () => {
-    const response = await api.get('/market/regions');
-    return response.data;
+    try {
+      const response = await api.get('/api/products');
+      const uniqueRegions = [...new Set(response.data.products?.map(p => p.location?.region).filter(Boolean))];
+      return { regions: uniqueRegions };
+    } catch (error) {
+      console.error('Error fetching regions:', error);
+      return { regions: [] };
+    }
   });
 
   const { data: categories } = useQuery('categories', async () => {
-    const response = await api.get('/market/categories');
-    return response.data;
+    try {
+      const response = await api.get('/api/products');
+      const uniqueCategories = [...new Set(response.data.products?.map(p => p.category).filter(Boolean))];
+      return { categories: uniqueCategories };
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      return { categories: [] };
+    }
   });
 
   const getTrendIcon = (trend) => {
