@@ -2,13 +2,13 @@
   "name": "mkulimalink",
   "version": "2.0.0",
   "description": "AI-powered agriculture super-app for East Africa - marketplace, finance, logistics, and community",
-  "main": "server.js",
+  "main": "index.js",
   "type": "commonjs",
   "engines": {
     "node": ">=20.0.0"
   },
   "scripts": {
-    "start": "node backend/server-minimal.js",
+    "start": "node index.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
