@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { Search, Filter, MapPin, Heart } from 'lucide-react';
 import api from '../api/axios';
+import { demoProducts } from '../utils/demoData';
 
 function Products() {
   const [filters, setFilters] = useState({
@@ -19,15 +20,20 @@ function Products() {
   const { data, isLoading } = useQuery(
     ['products', filters, page],
     async () => {
-      const params = new URLSearchParams();
-      Object.entries(filters).forEach(([key, value]) => {
-        if (value) params.append(key, value);
-      });
-      params.append('page', page);
-      params.append('limit', '12');
-      
-      const response = await api.get(`/products?${params}`);
-      return response.data;
+      try {
+        const params = new URLSearchParams();
+        Object.entries(filters).forEach(([key, value]) => {
+          if (value) params.append(key, value);
+        });
+        params.append('page', page);
+        params.append('limit', '12');
+        
+        const response = await api.get(`/products?${params}`);
+        return response.data;
+      } catch (error) {
+        // Use demo data if API fails
+        return { products: demoProducts, totalPages: 1 };
+      }
     }
   );
 
