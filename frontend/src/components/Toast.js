@@ -146,25 +146,7 @@ export const ToastProvider = ({ children }) => {
   );
 };
 
-// Convenience exports
-export const toast = {
-  success: (title, description, options) => {
-    // This will work if used within ToastProvider
-    const { success } = useToast();
-    return success(title, description, options);
-  },
-  error: (title, description, options) => {
-    const { error } = useToast();
-    return error(title, description, options);
-  },
-  warning: (title, description, options) => {
-    const { warning } = useToast();
-    return warning(title, description, options);
-  },
-  info: (title, description, options) => {
-    const { info } = useToast();
-    return info(title, description, options);
-  }
-};
+// Note: Use the useToast hook in components instead of the toast object
+// Example: const { success, error, warning, info } = useToast();
 
 export default ToastProvider;
