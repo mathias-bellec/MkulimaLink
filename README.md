@@ -4,8 +4,23 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
+[![Status](https://img.shields.io/badge/Status-LIVE-brightgreen.svg)]()
 
 **MkulimaLink** is the most comprehensive agriculture platform in East Africa, combining marketplace, financial services, logistics, insurance, farm management, and advanced technology into one powerful super-app. Built for East Africa's farming community with AI-powered features, real-time communication, blockchain traceability, and offline-first architecture.
+
+## 🚀 **LIVE PLATFORM**
+
+| Component | URL | Status |
+|-----------|-----|--------|
+| **Frontend** | https://mkulimalink.vercel.app | ✅ Live |
+| **Backend API** | https://mkulimalink-api-aa384e99a888.herokuapp.com | ✅ Live |
+| **Health Check** | https://mkulimalink-api-aa384e99a888.herokuapp.com/api/health | ✅ Running |
+
+### 📱 **Try It Now**
+- Visit **https://mkulimalink.vercel.app** to explore the platform
+- Browse demo products, market prices, and weather data
+- Mobile-responsive design works on all devices
+- No login required to browse
 
 ## 🏆 Why MkulimaLink Dominates the Market
 
