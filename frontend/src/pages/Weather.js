@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Cloud, CloudRain, Sun, Wind, Droplets, AlertTriangle } from 'lucide-react';
+import { Cloud, CloudRain, Sun, Droplets, AlertTriangle } from 'lucide-react';
 import api from '../api/axios';
 
 function Weather() {
@@ -115,7 +115,7 @@ function Weather() {
           <div className="skeleton h-32 mb-4"></div>
           <div className="skeleton h-6 w-1/2"></div>
         </div>
-      ) : weatherData ? (
+      ) : weatherData && Object.keys(weatherData).length > 0 ? (
         <>
           <div className="card mb-6">
             <div className="flex flex-col md:flex-row items-center gap-6">
@@ -123,7 +123,7 @@ function Weather() {
                 {getWeatherIcon(weatherData.condition)}
               </div>
               <div className="flex-1 text-center md:text-left">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">{selectedRegion}</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">{weatherData.location || selectedRegion}</h2>
                 <p className="text-5xl font-bold text-gray-900 mb-2">
                   {Math.round(weatherData.temperature)}°C
                 </p>
@@ -137,46 +137,9 @@ function Weather() {
                     {Math.round(weatherData.humidity)}%
                   </p>
                 </div>
-                <div className="text-center">
-                  <Wind className="text-gray-500 mx-auto mb-2" size={32} />
-                  <p className="text-sm text-gray-600">Wind Speed</p>
-                  <p className="text-xl font-semibold text-gray-900">
-                    {Math.round(weatherData.windSpeed)} km/h
-                  </p>
-                </div>
-                <div className="text-center col-span-2">
-                  <CloudRain className="text-blue-500 mx-auto mb-2" size={32} />
-                  <p className="text-sm text-gray-600">Rainfall</p>
-                  <p className="text-xl font-semibold text-gray-900">
-                    {Math.round(weatherData.rainfall)} mm
-                  </p>
-                </div>
               </div>
             </div>
           </div>
-
-          {weatherData.forecast && weatherData.forecast.length > 0 && (
-            <div className="card">
-              <h2 className="text-xl font-semibold text-gray-900 mb-4">7-Day Forecast</h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
-                {weatherData.forecast.map((day, index) => (
-                  <div key={index} className="text-center p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm font-medium text-gray-700 mb-2">
-                      {new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' })}
-                    </p>
-                    {getWeatherIcon(day.condition)}
-                    <p className="text-lg font-bold text-gray-900 mt-2">
-                      {Math.round(day.temperature)}°C
-                    </p>
-                    <p className="text-xs text-gray-600 mt-1">{day.condition}</p>
-                    <p className="text-xs text-blue-600 mt-1">
-                      {Math.round(day.rainfall)}mm
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </>
       ) : (
         <div className="text-center py-12">

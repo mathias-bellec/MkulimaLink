@@ -58,16 +58,6 @@ function Market() {
     }
   };
 
-  const getTrendColor = (trend) => {
-    switch (trend) {
-      case 'rising':
-        return 'text-green-600';
-      case 'falling':
-        return 'text-red-600';
-      default:
-        return 'text-gray-600';
-    }
-  };
 
   return (
     <div>
@@ -120,53 +110,35 @@ function Market() {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {latestPrices?.map((price, index) => (
+          {latestPrices?.prices?.map((price, index) => (
             <div key={index} className="card hover:shadow-lg transition-shadow">
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">{price.product}</h3>
-                  <p className="text-sm text-gray-600">{price.market}, {price.region}</p>
+                  <p className="text-sm text-gray-600">{price.region}</p>
                 </div>
                 {getTrendIcon(price.trend)}
               </div>
 
               <div className="mb-3">
                 <p className="text-3xl font-bold text-primary-600">
-                  TZS {price.price.average.toLocaleString()}
+                  TZS {price.price?.toLocaleString() || price.price}
                 </p>
-                <p className="text-sm text-gray-600">per {price.unit}</p>
-              </div>
-
-              <div className="flex items-center justify-between text-sm mb-3">
-                <div>
-                  <p className="text-gray-600">Min</p>
-                  <p className="font-semibold">TZS {price.price.min.toLocaleString()}</p>
-                </div>
-                <div className="text-right">
-                  <p className="text-gray-600">Max</p>
-                  <p className="font-semibold">TZS {price.price.max.toLocaleString()}</p>
-                </div>
+                <p className="text-sm text-gray-600">Current Price</p>
               </div>
 
               <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                 <span className={`badge ${
-                  price.trend === 'rising' ? 'badge-success' :
-                  price.trend === 'falling' ? 'badge-danger' : 'badge-info'
+                  price.trend === 'up' ? 'badge-success' :
+                  price.trend === 'down' ? 'badge-danger' : 'badge-info'
                 }`}>
                   {price.trend}
                 </span>
-                <span className={`text-sm font-medium ${getTrendColor(price.trend)}`}>
-                  {price.changePercentage > 0 ? '+' : ''}{price.changePercentage.toFixed(1)}%
-                </span>
               </div>
-
-              <p className="text-xs text-gray-500 mt-2">
-                Updated: {new Date(price.date).toLocaleDateString()}
-              </p>
             </div>
           ))}
 
-          {(!latestPrices || latestPrices.length === 0) && (
+          {(!latestPrices?.prices || latestPrices.prices.length === 0) && (
             <div className="col-span-full text-center py-12">
               <p className="text-gray-500 text-lg">No market data available</p>
             </div>
